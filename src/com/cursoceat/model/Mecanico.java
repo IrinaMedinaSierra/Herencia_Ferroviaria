@@ -1,8 +1,8 @@
 package com.cursoceat.model;
 
 public class Mecanico extends Empleado {
-	 public enum ESPECIALIDAD {FRENOS,HIDRAULICA, ELECTRICIDAD,MOTOR}
-	 private ESPECIALIDAD especialidad;
+	 public enum ESPECIALIDAD {FRENOS,HIDRAULICA, ELECTRICIDAD,MOTOR} //visible 
+	 private ESPECIALIDAD especialidad; //encapsulada
 	 
 	public Mecanico() {
 		super();
@@ -18,11 +18,18 @@ public class Mecanico extends Empleado {
 	public ESPECIALIDAD getEspecialidad() {
 		return especialidad;
 	}
-
-	public void setEspecialidad(ESPECIALIDAD especialidad) {
-		this.especialidad = especialidad;
+	
+	@Override
+	public void mostrarDatos() {
+		super.mostrarDatos();
+		System.out.println("Especialidad: "+ this.especialidad);
 	}
-	 
+
+	@Override
+	public String toString() {
+		return "\n Especialidad=" + especialidad + "\n Nombre=" + nombre + "\n Dni=" + dni + "\n Telefono="
+				+ telefono + "\n Sueldo=" + sueldo + "]";
+	}
 	 
 	 
 }

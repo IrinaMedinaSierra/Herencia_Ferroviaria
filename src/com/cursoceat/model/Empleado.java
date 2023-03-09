@@ -1,6 +1,6 @@
 package com.cursoceat.model;
 
-import javax.lang.model.util.ElementScanner9;
+
 
 public class Empleado {
 	private static int id;
@@ -8,9 +8,10 @@ public class Empleado {
 	protected String dni;
 	protected String telefono;
 	protected double sueldo;
+	private int idLocal; 
 	
 	public Empleado() {
-		asignarID(); //creamos un constructor y le asignamos un id
+		this.idLocal=asignarID(); //creamos un constructor y le asignamos un id
 	}
 
 	public Empleado(String nombre, String dni, String telefono, double sueldo) {
@@ -18,11 +19,12 @@ public class Empleado {
 		this.dni = dni;
 		this.telefono = telefono;
 		this.sueldo = sueldo;
-		asignarID();//constructor con todos los datos y asignamos id
+		this.idLocal=asignarID();//constructor con todos los datos y asignamos id		
 	}
 	
-	static private void asignarID() {
-		id++;
+	static private int asignarID() {		
+		return  ++id;
+		
 	}
 	
 	static public int getId() {
@@ -62,7 +64,7 @@ public class Empleado {
 	}
 	
 	public void mostrarDatos() {
-		System.out.println("El id es: " + id);
+		System.out.println("El id es: " + this.idLocal);
 		System.out.println("El nombre es : "+ this.nombre );
 		System.out.println("El DNI es: "+ this.dni );
 		System.out.println("El Teléfono es : "+ this.telefono);
