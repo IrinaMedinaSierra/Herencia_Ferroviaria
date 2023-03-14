@@ -30,6 +30,5 @@ public class Mecanico extends Empleado {
 		return "\n Especialidad=" + especialidad + "\n Nombre=" + nombre + "\n Dni=" + dni + "\n Telefono="
 				+ telefono + "\n Sueldo=" + sueldo + "]";
 	}
-	 
-	 
+	
 }
